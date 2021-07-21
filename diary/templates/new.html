@@ -2,21 +2,40 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} 일기 쓰기 {% endblock %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/new.css' %}"> {% endblock %}
 {% block content %}
 
-    <h2> [ 오늘의 일기 글쓰기 ] </h2>
-    <div class="borderStyle">
-        <form action="{% url 'create' %}" method="POST">
-            {% csrf_token %}
+<div id="new_diary">
+    <h2> [ 오늘의 일기 쓰기 ] </h2>
 
-            <div id="title"> 일기 제목 :  <input name="title" type="text"></div>
-            <div id="weather"> 오늘의 날씨 : <input name="weather" type="text"> </div>
-            <div id="mood"> 오늘의 기분 : <input name="mood" type="text"> </div>       
-            <div id="body"> 일기 내용 : <textarea name="body" type="textarea" cols="30" rows="8"> </textarea> </div>
-            <div id="image"> 이미지 첨부 : <input name="image" type="file"> </div>
-            
-            <button>일기 쓰기</button>
-        </form>
-    </div>
+    <form action="{% url 'create' %}" method="POST">
+        {% csrf_token %}
+
+        <div class="input_diary">
+            <div class="input_title"> Diary Title </div>
+            <input class="text_input" name="title" type="text">
+        </div>
+        <div class="input_diary">
+            <div class="input_title"> Today's weather </div>
+            <input class="text_input" name="weather" type="text">
+        </div>
+        <div class="input_diary">
+            <div class="input_title"> Today's Mood </div>
+            <input class="text_input" name="mood" type="text">
+        </div>
+        <div class="input_diary">
+            <div class="input_title"> Diary Contents </div>
+            <textarea id="diary_contents" name="body" type="textarea" cols="45" rows="8"> </textarea>
+        </div>
+        <div class="input_diary">
+            <div class="input_title"> Today's photo </div>
+            <input id="input_image" name="image" type="file">
+        </div>
+     
+        <div id="submit_diary">
+            <button id="submit"> Complete </button>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/base.css/' %}">
+    {% block css %} {% endblock css %}
     <title> {% block title %} {% endblock %} </title>
 </head>
 <body>
     <div id="header">
-        <div id="beans_logo"> <img id="logo" width="300" src="{% static 'img/beans_diary.png' %}"> </div>
+        <div id="beans_logo"> Bean's Diary <img id="logo" height="60" src="{% static 'img/Beans_icon.png' %}"> </div>
         <div id="menu">
             <a href="{% url 'home' %}"><button>홈으로</button></a> 
             <a href="#"><button>내 정보 조회</button></a> 

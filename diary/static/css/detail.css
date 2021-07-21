@@ -1,0 +1,15 @@
+#contents{
+    display:flex;
+    flex-direction:column;
+}
+.content{
+    margin-top:1%;
+}
+#update_btn{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:10%;
+}
+a{
+    margin-right:3%;
+}

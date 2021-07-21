@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.utils import timezone
 from diary.models import Diary
 from django.shortcuts import render, redirect, get_object_or_404
@@ -18,16 +17,7 @@ def create(request):
         new_diary.weather=request.POST['weather']
         new_diary.body=request.POST['body']
         new_diary.image=request.FILES['image']
-        
-        '''
-        # 글을 작성한(로그인한 user의 id) user의 id를 user_id 변수에 저장
-        user_id=request.user.id
-        # user_id 값과 User 모델의 객체 중 일치하는 값을 저장
-        user = User.objects.get(id=user_id)
-        # 작성자 = user
-        new_board.author=user
-        '''
-        
+
         # db에 생성된 diary 객체 저장
         new_diary.save()
         return redirect('home')
