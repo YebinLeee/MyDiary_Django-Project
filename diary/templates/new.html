@@ -1,0 +1,22 @@
+  
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 일기 쓰기 {% endblock %}
+{% block content %}
+
+    <h2> [ 오늘의 일기 글쓰기 ] </h2>
+    <div class="borderStyle">
+        <form action="{% url 'create' %}" method="POST">
+            {% csrf_token %}
+
+            <div id="title"> 일기 제목 :  <input name="title" type="text"></div>
+            <div id="weather"> 오늘의 날씨 : <input name="weather" type="text"> </div>
+            <div id="mood"> 오늘의 기분 : <input name="mood" type="text"> </div>       
+            <div id="body"> 일기 내용 : <textarea name="body" type="textarea" cols="30" rows="8"> </textarea> </div>
+            <div id="image"> 이미지 첨부 : <input name="image" type="file"> </div>
+            
+            <button>일기 쓰기</button>
+        </form>
+    </div>
+
+{% endblock %}

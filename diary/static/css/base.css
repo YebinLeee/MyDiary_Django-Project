@@ -1,0 +1,30 @@
+body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+#header{
+    height:15vh;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+#beans_logo{
+    width:100px;
+}
+a>button{
+    width:100px;
+    background-color:rgb(171, 231, 186);
+    border-radius:15px;
+    border:none;
+    box-shadow:2px 2px rgb(0, 121, 40);
+    padding:3%;
+}
+a>button:hover{
+    background-color:rgb(98, 241, 136);
+}
+#main{
+    height:80vh;
+}
