@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} 일기 수정하기 {% endblock %}
-{% block css %} <link rel="stylesheet" href="{% static 'css/edit.css' %}"> {% endblock %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/edit.css/' %}"> {% endblock %}
 {% block content %}
 
-    <div id="contents">
-        <form action="{% url 'edit' diary.id %}" method="POST">
-            {% csrf_token %}
+<div id="edit_diary">
+    <h2> [ 오늘의 일기 수정하기 ] </h2>
+    <form action="{% url 'edit' diary.id %}" method="POST">
+        {% csrf_token %}
 
-        <div class="content">  <input type="text" name="title" value="{{diary.title}}"> </div>
-        <div class="content"> Date : {{diary.pub_date}} </div>
-        <div class="content"> <input name="weather" type="text">  </div>
-        <div class="content"> My Mood : {{diary.mood}} </div>       
-        <div class="content"> <textarea name="body" value="{{diary.body}}"> </textarea> </div>
+        <div class="content"> <div class="input_title"> Diary Title </div> <input type="text" name="title" value="{{diary.title}}"> </div>
+        <div class="content"> <div class="input_title"> Date </div> {{diary.pub_date}} </div>
+        <div class="content"> <div class="input_title"> Weather </div> {{diary.weather}}  </div>
+        <div class="content"> <div class="input_title">My Mood </div> {{diary.mood}} </div>       
+        <div class="content"> <div class="input_title"> Diary Contents</div> <textarea id="diary_contents" name="body" cols="45" rows="8" value="{{diary.body}}"> </textarea> </div>
 
         {% if diary.image %}
             <img src="{{diary.image.url}}" width='500' alt="일기 사진 없음" />

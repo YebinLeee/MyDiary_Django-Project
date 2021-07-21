@@ -1,0 +1,27 @@
+#edit_diary{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.content{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+.input_title{
+    width:40%;
+    font-weight:bold;
+    text-decoration:underline;
+}
+.content, #submit_diary{
+    display:flex;
+    color:rgb(133, 133, 133);
+    font-weight:bold;
+    margin-bottom:3%;
+}
+input, #diary_contents{
+    width:300px;
+    border-radius:5px;
+    border:0.5px solid rgb(185, 185, 185);
+    box-shadow:2px 2px rgb(199, 199, 199);
+}
