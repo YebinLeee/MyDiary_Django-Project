@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} 일기 수정하기 {% endblock %}
-{% block css %} <link rel="stylesheet" href="{% static 'css/edit.css/' %}"> {% endblock %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/edit.css' %}"> {% endblock %}
 {% block content %}
 
 <div id="edit_diary">
@@ -16,11 +16,11 @@
         <div class="content"> <div class="input_title"> Diary Contents</div> <textarea id="diary_contents" name="body" cols="45" rows="8" value="{{diary.body}}"> </textarea> </div>
 
         {% if diary.image %}
-            <img src="{{diary.image.url}}" width='500' alt="일기 사진 없음" />
+            <img src="{{diary.image.url}}" width='300' alt="일기 사진 없음" />
         {% endif %}
 
         <div id="update_btn">
-            <button> 수정하기 </button>
+            <button id="submit">  수정하기 </button>
         <div>
 
         </form>
