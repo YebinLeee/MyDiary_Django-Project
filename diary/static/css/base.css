@@ -24,6 +24,13 @@ body{
     justify-content:center;
     align-items:center;
 }
+a{
+    text-decoration:none;
+    color:rgb(48, 48, 48);
+}
+a:hover{
+    color:rgb(133, 133, 133);
+}
 #beans_logo{
     display:flex;
     align-items:center;

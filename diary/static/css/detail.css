@@ -3,17 +3,10 @@
     flex-direction:column;
 }
 .content{
-    margin-top:1%;
+    margin-bottom:1%;
 }
 #update_btn{
     display:flex;
     justify-content:flex-end;
     margin-top:10%;
-}
-a{
-    margin-right:3%;
-}
-.input_title{
-    font-weight:bold;
-    text-decoration:underline;
 }
