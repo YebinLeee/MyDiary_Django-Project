@@ -22,5 +22,6 @@ from diary import views as D
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', D.home, name='home'),
-    path('diary/', include('diary.urls')),
-] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('diary', include('diary.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
