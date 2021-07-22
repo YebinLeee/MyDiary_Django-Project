@@ -58,8 +58,20 @@
 
 ## 서버 실행법
 
+서버 주소 [localhost 주소] : 127.0.0.1:8000/
+
 1. 가상환경 설정 (python -m venv [가상환경이름])
-2. django 설치 (pip install django)
-3. 서버 실행 (python manage.py runserver)
+2. 가상환경 활성화 (. [가상환경이름]/Scripts/actiavte) - Windows용
+3. django 설치 (pip install django)
+4. 서버 실행 (python manage.py runserver)
+5. 계정 로그인 or 생성
+  - admin 계정 생성
+    - python manage.py createsuperuser -> id, pw 생성
+    - 127.0.0.1:8000/admin/ 에서 로그인
+  - 구글 로그인
+    - 상단 header bar의 로그인 버튼 클릭 후 구글 소셜 계정으로 로그인
+
+
+
 
 <br>
