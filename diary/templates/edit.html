@@ -11,12 +11,14 @@
 
         <div class="content"> <div class="input_title"> Diary Title </div> <input type="text" name="title" value="{{diary.title}}"> </div>
         <div class="content"> <div class="input_title"> Date </div> {{diary.pub_date}} </div>
-        <div class="content"> <div class="input_title"> Weather </div> {{diary.weather}}  </div>
-        <div class="content"> <div class="input_title">My Mood </div> {{diary.mood}} </div>       
-        <div class="content"> <div class="input_title"> Diary Contents</div> <textarea id="diary_contents" name="body" cols="45" rows="8" value="{{diary.body}}"> </textarea> </div>
+        <div class="content"> <div class="input_title"> Weather </div> <input type="text" name="weather" value="{{diary.weather}}"> </div>
+        <div class="content"> <div class="input_title">My Mood </div> <input type="text" name="weather" value="{{diary.mood}}"> </div>       
+        <div class="content"> <div class="input_title"> Diary Contents</div> <textarea id="diary_contents" name="body" cols="45" rows="8"> {{ diary.body }} </textarea> </div>
 
         {% if diary.image %}
-            <img src="{{diary.image.url}}" width='300' alt="일기 사진 없음" />
+            <div id="content_img">
+                <img src="{{diary.image.url}}" width='300' alt="일기 사진 없음" />
+            </div>
         {% endif %}
 
         <div id="update_btn">

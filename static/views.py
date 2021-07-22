@@ -1,12 +1,27 @@
 from django.utils import timezone
 from diary.models import Diary
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
-from diary.models import *
+from .models import *
 
 def home(request):
     diary=Diary.objects.all()
     return render(request, 'home.html', {'diary':diary})
 
+'''
+
+class Diary(models.Model):
+    title=models.CharField(max_length=100) # 일기 제목
+    pub_date=models.DateTimeField() # 일기 날짜
+    mood=models.CharField(max_length=100) # 오늘의 기분
+    weather=models.CharField(max_length=20) # 오늘의 날씨
+    body=models.TextField() # 일기 내용
+    image=models.ImageField(upload_to="diary/", blank=True, null=True) # 첨부 사진
+    
+    def __str__(self):
+        return self.title
+        
+'''
 def create(request):
     # 글을 작성할 경우 POST 방식
     if request.method == "POST":

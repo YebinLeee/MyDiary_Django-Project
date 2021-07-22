@@ -1,3 +1,32 @@
+#diary_contents{
+    display:flex;
+    flex-direction:row;
+    flex-flow:row wrap;
+    justify-content:space-around;
+    align-content:center;
+    align-items:center;
+    background-color:hsl(0, 1%, 86%);
+    height:30%;
+}
 #diary{
-    text-align:center;
+    background-color:#dceaf7;
+    margin:1%;padding:3%;
+    flex-direction:column;
+    width:600px;height:200px;
+    align-items:center;
+    justify-content:space-around;
+    max-width:700px;
+}
+#goto_detail{
+    margin-top:3%;
+}
+.title{
+    background-color:#dceaf7;
+}
+#nav{
+    margin-top:10%;
+    display:flex;
+    width:100%;
+    justify-content:center;
+    align-items:center;
 }

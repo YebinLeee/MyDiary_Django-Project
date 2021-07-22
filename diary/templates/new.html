@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} 일기 쓰기 {% endblock %}
-{% block link %} {% static 'css/new.css/' %} {% endblock %}
+{% block link %} {% static '/css/new.css/' %} {% endblock %}
 {% block content %}
 
 <div id="new_diary">
     <h2> [ 오늘의 일기 쓰기 ] </h2>
 
-    <form action="{% url create %}" method="POST" enctype="multipart/form-data">
+    <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %} 
 
         <div class="input_diary">

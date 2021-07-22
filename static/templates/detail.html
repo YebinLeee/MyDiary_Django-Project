@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} 내 다이어리 게시판 {% endblock %}
-{% block link %} {% static 'css/detail.css/' %} {% endblock %}
+{% block link %} {% static 'css/detail.css' %} {% endblock %}
 {% block content %}
 
     <div id="contents">
@@ -16,8 +16,10 @@
         {% endif %}
 
         <div id="update_btn">
-            <a href="{% url 'edit' diary.id %}"><button>수정하기</button></a>
-            <a href="{% url 'delete' diary.id %}"><button>삭제하기</button></a>
+            <a href="{% url 'edit' diary.id %}"><button class="submit">수정하기</button></a>
+            <a href="{% url 'delete' diary.id %}"><button class="submit">삭제하기</button></a>
         <div>
+
+    </div>
 
 {% endblock %}
