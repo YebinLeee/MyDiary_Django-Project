@@ -34,12 +34,34 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'diary.apps.DiaryConfig',
+    
+    # allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    
+    #Provider 구글/페이스북/카카오톡/깃허브 등 소셜 로그인 제공업체
+    'allauth.socialaccount.providers.google',
 ]
+
+# 로그인 후에 redirect 될 URL
+LOGIN_REDIRECT_URL='/'
+
+# 로그아웃 후에 redirect 될 URL
+LOGOUT_REDIRECT_URL='/'
+
+AUTHENTICATION_BACKENDS=(
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID=1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

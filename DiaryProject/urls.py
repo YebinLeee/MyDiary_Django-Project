@@ -23,6 +23,10 @@ from diary import views as D
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', D.home, name='home'),
+    
+    #social login
+    path('accounts/', include('allauth.urls')),
+    
     path('diary/', include('diary.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

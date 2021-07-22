@@ -15,7 +15,7 @@ body{
     align-items:center;
 }
 #header{
-    font-size:200%;
+    font-size:100%;
     font-weight:bold;
     height:20vh;
     width:50%;
@@ -37,7 +37,7 @@ a:hover{
 }
 #menu{
     display:flex;
-    width:450px;
+    width:65%;
     margin-top:1%;
     justify-content:space-between;
 }
